@@ -12,6 +12,3 @@ class Image(models.Model):
 
 
 
-class Profile(models.Model):
-    profile_photo
-    bio
