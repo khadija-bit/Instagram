@@ -9,12 +9,21 @@ class Image(models.Model):
     likes = models.ForeignKey()
     comments = models.ForeignKey()
     date = models.DateTimeField(auto_now_add=True)
- 
+
 
     def save_image(self):
         self.save
 
     def delete_image(self):
-        self.delete 
+        self.delete
 
 
+class Profile(models.Model):
+    profile_photo = models.ImageField()
+    bio = models.CharField(max_length = 60)
+    
+    def save_profile(self):
+        self.save
+
+    def delete_image(self):
+        self.delete
