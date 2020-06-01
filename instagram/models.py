@@ -34,11 +34,18 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
+    # def all_like(self):
+    #     return self.likes
+
     @classmethod
     def get_image_by_id(cls,id):
-        image = cls.objects.get(id = id)
+        images = cls.objects.get(id = id)
         return image 
-        
+
+    @classmethod
+    def search_image(cls,search_term):
+        images = cls.objects.filter(name_contain = search_term)
+
 
 class Comment(models.Model):
     comment = models.CharField(max_length = 100)
