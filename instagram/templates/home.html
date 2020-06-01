@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block styles %}
+    {% bootstrap_css %}
+
+    {% endblock %}
+
+    {% include "navbar.html" %}
+{% block content %}
+{% if images %}
+{% for image in images %}
+   <h1>{{image.name}}</h1>
+   <p>{{image.caption}}</p>
+   <p>posted on: {{image.date}}</p>
+{% endfor %}
+{% endif %}
+{% endblock %}
