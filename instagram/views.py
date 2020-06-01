@@ -3,4 +3,5 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return HttpResponse('welcome to Instagram')
+    return HttpResponse('Welcome to Instagram')
+    
