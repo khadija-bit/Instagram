@@ -13,6 +13,11 @@ class ImageTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.khadija,Image))    
 
+    # Testing Save Method
+    def test_save_method(self):
+        self.khadija.save_image()
+        pic = Image.objects.all()
+        self.assertTrue(len(pic) > 0)    
 
 class ProfileTestClass(TestCase):
     
@@ -23,3 +28,9 @@ class ProfileTestClass(TestCase):
     # Testing instance
     def test_instance(self):    
         self.assertTrue(isinstance(self.khadija,Profile))
+
+    # Testing Save Method
+    def test_save_method(self):
+        self.khadija.save_profile()
+        picture = Profile.objects.all()
+        self.assertTrue(len(picture) > 0)     
