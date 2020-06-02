@@ -1,5 +1,7 @@
 from django import forms
 
-class NewsLetterForm(forms.Form):
-    your_name = forms.CharField(label='First Name',max_length=30)
+class UserRegisterForm(forms.Form):
+    email = forms.EmailField(label='Email')
+
+class UserUpdateForm(forms.Form):
     email = forms.EmailField(label='Email')
