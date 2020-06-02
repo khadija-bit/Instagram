@@ -18,7 +18,7 @@ class Profile(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField()
+    images = models.ImageField()
     name = models.CharField(max_length = 60)
     caption = models.CharField(max_length = 100)
     likes = models.IntegerField()
