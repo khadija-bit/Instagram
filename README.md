@@ -14,7 +14,7 @@ https://github.com/khadija-bit/Instagram.git
 
 Navigate to the directory:
 ```bash
-cd PictureSplash
+cd Instagram
 ```
 
 Installation requirements:
