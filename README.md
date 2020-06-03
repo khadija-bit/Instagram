@@ -7,13 +7,55 @@ Khadija Hassan
 this a django application which is a clone of the popular social media Instagram.
 
 # Setup Installation
+Github cloning:
+```bash
+https://github.com/khadija-bit/Instagram.git
+```
 
+Navigate to the directory:
+```bash
+cd PictureSplash
+```
+
+Installation requirements:
+```bash
+pip freeze > requirements.txt
+```
+
+Install Django
+```bash
+
+pip install django==1.11
+```
+
+Database Migration:
+
+run check
+```bash
+python3.6 manage.py check
+```
+
+Make Migration
+'''bash
+python manage.py makemigrations < project app name>
+```
+
+Migrate
+```bash
+python3.6 manage.py migrate
+```
+
+Run application
+```bash
+python3.6 manage.py runserver
+```
 # Technology Used
 * Python3.6
 * CSS
 * Django 1.11
 * Heroku
 * Bootstrap
+* Postgres
 
 
 # Known Bugs
