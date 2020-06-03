@@ -9,10 +9,18 @@ this a django application which is a clone of the popular social media Instagram
 # Setup Installation
 
 # Technology Used
+* Python3.6
+* CSS
+* Django 1.11
+* Heroku
+* Bootstrap
 
+
+# Known Bugs
+* they are no bugs
 
 # Contact Information
-
+Any feedback contact this email  sumeyahassan34@gmail.com
 # LICENSE
 
 MIT License
