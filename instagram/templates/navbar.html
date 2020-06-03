@@ -7,7 +7,7 @@
     <body>
         <nav class="navbar navbar-default">
             <a class="navbar-brand" href="#" style="font-family: 'Lobster', cursive;">
-                <i class="fa fa-instagram"></i> | Instagram
+                <i class="fa fa-instagram" style="font-size:36px"></i> | Instagram
             </a>
             <div class="custom-center">
                 <form class="navbar-form" role="search" action="{% url 'search_results' %}">
@@ -20,38 +20,37 @@
                     >
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
-                    {% if user.is_authenticated %}
-                    <ul>
-                        <li class="dropdown">
-                            <a
-                                href="#"
-                                class="dropdown-toggle btn btn-default"
-                                data-toggle="dropdown"
-                                role="button"
-                                aria-expanded="false"
-                            >
-                                Account
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                </li>
-                                <li>
-                                    <a href="/accounts/password/change">Change Password</a>
-                                </li>
-                                <li>
-                                    <a href="/logout">Logout</a>
-                                </li>
-                            </ul>
+            </div>
+            {% if user.is_authenticated %}
+            <ul>
+                <li class="dropdown">
+                    <a
+                        href="#"
+                        class="dropdown-toggle btn btn-default"
+                        data-toggle="dropdown"
+                        role="button"
+                        aria-expanded="false"
+                    >
+                        Account
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                        </li>
+                        <li>
+                            <a href="/accounts/password/change">Change Password</a>
+                        </li>
+                        <li>
+                            <a href="/logout">Logout</a>
                         </li>
                     </ul>
-                    {% else %}
-                    <li>
-                        <a class="btn btn-default" href="/accounts/login">Login</a>
-                    </li>
-                    {% endif %}
-                
-            </div>
+                </li>
+            </ul>
+            {% else %}
+            <li>
+                <a class="btn btn-default" href="/accounts/login">Login</a>
+            </li>
+            {% endif %}
         </nav>
     </body>
 </html>
