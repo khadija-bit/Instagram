@@ -1,6 +1,10 @@
+# Instagram
 
+# Author
+Khadija Hassan
 
 # Description
+this a django application which is a clone of the popular social media Instagram.
 
 # Setup Installation
 
