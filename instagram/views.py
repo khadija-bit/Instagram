@@ -1,11 +1,26 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
-from .models import Profile, Image,Comment
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from .models import Profile, Image,Comment,NewsLetterEnts
+from .forms import NewsLetterForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def home(request):
     photo = Image.objects.all()
-    return render(request, 'instagram/home.html',{"photo":photo})
+    if request.method == 'POST':
+        form = NewsLetterForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['your_name']
+            email = form.cleaned_data['email']
+
+            recipient = NewsLetterEnts(name = name,email = email)
+            recipient.save()
+            HttpResponseRedirect('home')
+    else:
+        form = NewsLetterForm()
+
+    return render(request, 'instagram/home.html',{"photo":photo,"letterForm":form})
 
 def search_results(request):
 
