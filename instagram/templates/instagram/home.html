@@ -10,11 +10,16 @@
 
     
 {% block content %}
-{% if images %}
-{% for image in images %}
-   <h1>{{images.name}}</h1>
-   <p>{{images.caption}}</p>
-   <p>posted on: {{images.date}}</p>
+{% if photo %}
+{% for images in photo %}
+ <div class="card">
+    <img src="{{images.images.url}}" class="img-responsive" width="40%" height="40%" alt="">
+     <p>{{images.name}}</p>
+     <p>{{images.caption}}</p>
+     <p>{{images.date}}</p>
+ </div>
 {% endfor %}
 {% endif %}
+ </div>
+</div>
 {% endblock %}

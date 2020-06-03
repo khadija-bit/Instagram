@@ -1,16 +1,20 @@
 {% extends 'instagram/base.html' %}
 
 {% block content %}
-  {% if images %}
-  <h2>Found {{images|length }} of searched term {{message}}</h2>
+<div class="container">
+<div class="row">
+
+<div class="card-body">
+  {% if searched_image %}
+ 
 
   {% else %}
-  <h2> Found 0 articles for the search term {{message}} </h2>  
+  <h2> Found 0 image for the search term {{message}} </h2>  
+  
   {% endif %}
-     {% if photo %}
-     {% for images in photo %}
-     <p>{{images.name}}</p>
-     <p>{{images.caption}}</p>
-     <p>{{images.date}}</p>
+</div>
+  
 
+    </div>
+  </div>
 {% endblock %}

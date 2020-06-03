@@ -8,12 +8,14 @@ def home(request):
     return render(request, 'instagram/home.html',{"photo":photo})
 
 def search_results(request):
-    if 'images' in request.GET["images"]:
-        search_term = request.GET.get("images")
+
+    if 'image' in request.GET and request.GET["image"]:
+        search_term = request.GET.get("image")
         searched_image = Image.search_image(search_term)
         message = f"{search_term}"
-
-        return render(request,'search.html',{"message":message,"image": searched_image})
+   
+        return render(request,'instagram/search.html',{"message":message,"searched_image": searched_image})
+        
     else:
         message = "You haven't searched anything"
         return render(request,'instagram/search.html',{"message":message})

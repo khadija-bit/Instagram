@@ -5,7 +5,6 @@ class Profile(models.Model):
     profile_photo = models.ImageField()
     bio = models.CharField(max_length = 60)
     
-    
     def __str__(self):
         return self.bio
 
@@ -14,6 +13,7 @@ class Profile(models.Model):
 
     def delete_profile(self):
         self.delete()
+
 
 class Image(models.Model):
     images = models.ImageField()
@@ -34,8 +34,8 @@ class Image(models.Model):
 
     @classmethod
     def search_image(cls,search_term):
-        images = cls.objects.filter(name_icontain = search_term)
-
+        images = cls.objects.filter(name__icontains = search_term)
+        return images
 
 class Comment(models.Model):
     comment = models.CharField(max_length = 100)
