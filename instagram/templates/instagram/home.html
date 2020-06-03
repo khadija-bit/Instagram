@@ -5,21 +5,48 @@
 
 {% block styles %}
     {% bootstrap_css %}
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     {% endblock %}
 
     
 {% block content %}
+<div class="container">
+    <div class="row">
 {% if photo %}
 {% for images in photo %}
- <div class="card">
-    <img src="{{images.images.url}}" class="img-responsive" width="40%" height="40%" alt="">
-     <p>{{images.name}}</p>
-     <p>{{images.caption}}</p>
-     <p>{{images.date}}</p>
+ <div class="card" style="border-radius: 30px;">
+    <div class="card-body">
+        <p>{{images.name}}</p>
+      <div class="card-title">
+        <img src="{{images.user.profile.profile_photo.url}}" class="img-responsive" width="40%" height="40%" alt="">
+      </div>
+    </div>
+    <div class="card-text">
+        <img src="{{images.images.url}}" class="img-responsive" width="40%" height="40%" alt="">
+        {{images.user.username}}
+        <a>
+           <i class="fa fa-heart" style="font-size:24px; color:red; margin-left: 10px;"></i>
+           <i>{{images.likes.counts}}</i> 
+        </a>
+        <a>
+            <i class="fa fa-comment" style="font-size:24px"></i>
+            <i>{{images.comment.counts}}</i> 
+         </a>
+
+        <p>{{images.caption}}</p>
+        <p style="margin-left: 10px;">{{images.date|timesince}} ago</p>
+    </div>
+    {% if comment %}
+    {% for comment %}
+    {{}}
+    {% endfor %}
+    {% endif %}
+
  </div>
 {% endfor %}
 {% endif %}
  </div>
 </div>
+
+
 {% endblock %}
