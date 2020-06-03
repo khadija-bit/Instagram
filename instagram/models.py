@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-   
 class Profile(models.Model):
     profile_photo = models.ImageField()
     bio = models.CharField(max_length = 60)
@@ -15,7 +14,6 @@ class Profile(models.Model):
 
     def delete_profile(self):
         self.delete()
-
 
 class Image(models.Model):
     images = models.ImageField()
@@ -34,17 +32,9 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
-    # def all_like(self):
-    #     return self.likes
-
-    @classmethod
-    def get_image_by_id(cls,id):
-        images = cls.objects.get(id = id)
-        return image 
-
     @classmethod
     def search_image(cls,search_term):
-        images = cls.objects.filter(name_contain = search_term)
+        images = cls.objects.filter(name_icontain = search_term)
 
 
 class Comment(models.Model):

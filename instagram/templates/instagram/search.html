@@ -7,8 +7,8 @@
   {% else %}
   <h2> Found 0 articles for the search term {{message}} </h2>  
   {% endif %}
-     {% if image %}
-     {% for images in image %}
+     {% if photo %}
+     {% for images in photo %}
      <p>{{images.name}}</p>
      <p>{{images.caption}}</p>
      <p>{{images.date}}</p>

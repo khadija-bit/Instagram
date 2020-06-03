@@ -33,4 +33,4 @@ class ProfileTestClass(TestCase):
     def test_save_method(self):
         self.khadija.save_profile()
         picture = Profile.objects.all()
-        self.assertTrue(len(picture) > 0)     
+        self.assertTrue(len(picture) > 0)
