@@ -19,7 +19,7 @@
         <p>{{images.name}}</p>
       <div class="card-title">
         <div class="card-body">
-          <img src="/media/high.jpg" style=" height: 400px; width: 350px;">
+          <img src="/media/beach.jpeg" style=" height: 400px; width: 350px;">
         </div>
         <i class="fa fa-heart" style="font-size:24px; color:red; margin-left: 10px;"></i>
         <i>{{images.likes.counts}}</i> 
@@ -28,8 +28,50 @@
          <i class="fa fa-comment" style="font-size:24px"></i>
          <i>{{images.comment.counts}}</i> 
       </a>
+      <div class="card-text">
+        <img src="{{images.images.url}}" class="img-responsive" width="40%" height="40%" alt="">
+        {{images.user.username}}
+        <a>
+           <i class="fa fa-heart" style="font-size:24px; color:red; margin-left: 10px;"></i>
+           <i>{{images.likes.counts}}</i> 
+        </a>
+        <a>
+            <i class="fa fa-comment" style="font-size:24px"></i>
+            <i>{{images.comment.counts}}</i> 
+         </a>
+
+        <p>{{images.caption}}</p>
+        <p style="margin-left: 10px;">{{images.date|timesince}} ago</p>
+    </div>
         <hr>
           <br>
+          <div class="card-body">
+            <img src="/media/etho.jpg" style=" height: 400px; width: 350px;">
+          </div>
+          <i class="fa fa-heart" style="font-size:24px; color:red; margin-left: 10px;"></i>
+          <i>{{images.likes.counts}}</i> 
+       </a>
+       <a>
+           <i class="fa fa-comment" style="font-size:24px"></i>
+           <i>{{images.comment.counts}}</i> 
+        </a>
+        <div class="card-text">
+          <img src="{{images.images.url}}" class="img-responsive" width="40%" height="40%" alt="">
+          {{images.user.username}}
+          <a>
+             <i class="fa fa-heart" style="font-size:24px; color:red; margin-left: 10px;"></i>
+             <i>{{images.likes.counts}}</i> 
+          </a>
+          <a>
+              <i class="fa fa-comment" style="font-size:24px"></i>
+              <i>{{images.comment.counts}}</i> 
+           </a>
+  
+          <p>{{images.caption}}</p>
+          <p style="margin-left: 10px;">{{images.date|timesince}} ago</p>
+      </div>
+          <hr>
+            <br>
         <div class="card-body">
           <img src="/media/high.jpg" style=" height: 400px; width: 350px;">
         </div>
