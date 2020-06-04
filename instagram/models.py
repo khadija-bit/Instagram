@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+
 # Create your models here.
 class Profile(models.Model):
     profile_photo = models.ImageField()
     bio = models.CharField(max_length = 60)
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
     
     def __str__(self):
         return self.bio
@@ -13,6 +15,11 @@ class Profile(models.Model):
 
     def delete_profile(self):
         self.delete()
+    
+    @classmethod
+    def search_profile(cls,search_term):
+        user = cls.objects.filter(user__icontains = search_term)
+        return user
 
 
 class Image(models.Model):

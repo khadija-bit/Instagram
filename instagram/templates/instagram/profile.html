@@ -1,0 +1,20 @@
+{% extends 'instagram/base.html' %}
+
+{% block content %}
+<h1 class="text-center"> Your profile</h1>
+<div class="container">
+    <div class="row">
+        {% for profile in profile %}
+        <div class="col-md-4">
+            <div class="card">
+              <img class="card-img-top" src="{{profile.profile_photo.url}}">
+            </div>
+            {{profiles.bio}}
+            {% endfor%}
+        </div>
+        
+    </div>
+</div>
+
+
+{% endblock %}

@@ -22,6 +22,8 @@ def home(request):
 
     return render(request, 'instagram/home.html',{"photo":photo,"letterForm":form})
 
+
+@login_required(login_url='/accounts/login/')
 def search_results(request):
 
     if 'image' in request.GET and request.GET["image"]:
@@ -34,3 +36,11 @@ def search_results(request):
     else:
         message = "You haven't searched anything"
         return render(request,'instagram/search.html',{"message":message})
+
+
+@login_required(login_url='/accounts/login/')
+def profiles(request,id):
+    current_user = request.user
+    profile = Profile.objects.filter(user_id = id).all()
+    image = Image.objects.filter(profile_id =current_user.id).all()
+    return render(request,'instagram/profile.html',{"profile":profile, "image":image})

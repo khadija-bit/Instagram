@@ -7,8 +7,10 @@
     <body>
         <nav class="navbar navbar-default">
             <a class="navbar-brand" href="#" style="font-family: 'Lobster', cursive;">
-                <i class="fa fa-instagram" style="font-size:36px"></i> | Instagram
+                <i class="fa fa-instagram"></i> | Instagram
             </a>
+            <div ></div>
+            {% if user.is_authenticated %}
             <div class="custom-center">
                 <form class="navbar-form" role="search" action="{% url 'search_results' %}">
                     <input
@@ -21,7 +23,6 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
-            {% if user.is_authenticated %}
             <ul>
                 <li class="dropdown">
                     <a
@@ -41,6 +42,9 @@
                             <a href="/accounts/password/change">Change Password</a>
                         </li>
                         <li>
+                            <a href="/profile/{{user.id}}">profile</a>
+                        </li>
+                        <li>
                             <a href="/logout">Logout</a>
                         </li>
                     </ul>
@@ -50,7 +54,10 @@
             <li>
                 <a class="btn btn-default" href="/accounts/login">Login</a>
             </li>
+            
             {% endif %}
+            
+            
         </nav>
     </body>
 </html>
